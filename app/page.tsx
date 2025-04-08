@@ -9,13 +9,19 @@ import {
   ChevronRight,
   Code,
   ExternalLink,
+  GitBranch,
   Github,
+  Globe,
   Layers,
+  LayoutGrid,
   Linkedin,
   Mail,
   Menu,
   Monitor,
   Package,
+  Smartphone,
+  Sparkles,
+  Users,
   X,
 } from "lucide-react";
 import {
@@ -30,6 +36,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-provider";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 type StatusState = {
   submitting: boolean;
@@ -47,10 +54,10 @@ const navItems = [
 
 const projects = [
   {
-    title: "E-commerce Platform",
+    title: "THREETWENTYONE",
     description:
       "A modern e-commerce solution with streamlined checkout process and inventory management.",
-    tags: ["Next.js", "TypeScript", "Stripe", "Tailwind CSS"],
+    tags: ["Next.js", "Tailwind CSS", "Supabase", "Paystack"],
     url: "https://threetwentyonegh.com",
     features: [
       {
@@ -67,15 +74,7 @@ const projects = [
       },
     ],
     colors: ["#f8fafc", "#f1f5f9", "#e2e8f0"],
-    mockup: {
-      type: "browser",
-      elements: [
-        { type: "header", height: 40 },
-        { type: "hero", height: 300 },
-        { type: "grid", columns: 3, height: 200 },
-        { type: "content", height: 150 },
-      ],
-    },
+    image: "/Mockups/threetwentyone.png",
   },
   // {
   //   title: "Health & Fitness App",
@@ -88,21 +87,13 @@ const projects = [
   //     { icon: <Layers className="w-4 h-4" />, text: "Personalized workout plans" },
   //   ],
   //   colors: ["#ecfdf5", "#d1fae5", "#a7f3d0"],
-  //   mockup: {
-  //     type: "mobile",
-  //     elements: [
-  //       { type: "status", height: 30 },
-  //       { type: "header", height: 60 },
-  //       { type: "chart", height: 180 },
-  //       { type: "list", height: 240 },
-  //     ],
-  //   },
+  //   image: "/public/Mockups/fitness.png",
   // },
   {
-    title: "Skill Exchange Platform",
+    title: "SkillExchange",
     description:
       "A platform where users can exchange their skills for currency.",
-    tags: ["React", "Node.js", "Express", "MongoDB"],
+    tags: ["Next.js", "Supabase", "Framer Motion", "Cloudflare"],
     url: "https://skillexchange.vercel.app",
     features: [
       {
@@ -116,13 +107,53 @@ const projects = [
       { icon: <Layers className="w-4 h-4" />, text: "Real-time messaging" },
     ],
     colors: ["#eff6ff", "#dbeafe", "#bfdbfe"],
-    mockup: {
-      type: "desktop",
-      elements: [
-        { type: "navbar", height: 50 },
-        { type: "split", height: 350, ratio: 0.6 },
-      ],
-    },
+    image: "/Mockups/skill-exchange.png",
+  },
+  {
+    title: "FlowForge",
+    description: 
+      "A collaborative multitasking platform for agile team workflows, task management, and project tracking.",
+    tags: ["Next.js", "Electron", "Supabase", "Tailwind CSS"],
+    url: "https://flowforge-pi.vercel.app/",
+    features: [
+      {
+        icon: <Users className="w-4 h-4" />,
+        text: "Real-time team collaboration",
+      },
+      {
+        icon: <LayoutGrid className="w-4 h-4" />,
+        text: "Kanban board visualization",
+      },
+      {
+        icon: <GitBranch className="w-4 h-4" />,
+        text: "Version control integration",
+      },
+    ],
+    colors: ["#f0f4fd", "#dae3fc", "#c7d7fa"],
+    image: "/Mockups/flowforge.png",
+  },
+  {
+    title: "Corporate Website",
+    description:
+      "A dynamic company website with interactive elements, smooth animations, and comprehensive information architecture.",
+    tags: ["Next.js", "Framer Motion", "Three.js", "Tailwind CSS"],
+    url: "https://www.saitechnology.co/",
+    features: [
+      {
+        icon: <Sparkles className="w-4 h-4" />,
+        text: "Immersive scrolling animations",
+      },
+      {
+        icon: <Globe className="w-4 h-4" />,
+        text: "Multilingual content support",
+      },
+      {
+        icon: <Smartphone className="w-4 h-4" />,
+        text: "Adaptive performance optimization",
+      },
+    ],
+    colors: ["#fafafa", "#f4f4f5", "#e4e4e7"],
+    image: "/Mockups/sai.png",
   },
 ];
 
@@ -204,7 +235,7 @@ const experiences = [
     title: "Full Stack Developer",
     company: "THREETWENTYONE",
     description:
-      "Worked solo on both front-end and back-end development to deliver high-quality, CMS-driven web solutions, ensuring seamless user experiences and efficient workflows. Implemented and managed payment integrations, enabling secure and reliable transactions across multiple platforms.",
+      "Worked solo on both front-end and back-end development to deliver high-quality,  web solutions, ensuring seamless user experiences and efficient workflows. Implemented and managed payment integrations, enabling secure and reliable transactions across multiple platforms.",
     highlights: [
       "Developed full-stack web applications",
       "Implemented secure payment systems",
@@ -1068,7 +1099,7 @@ function ExperienceCard({
 
   return (
     <motion.div
-      className="relative pl-6 pb-6 border-l border-neutral-200 dark:border-neutral-700 last:border-transparent last:pb-0"
+      className="relative pl-6 pb-6 border-l border-neutral-200 dark:border-neutral-700  last:border-transparent last:pb-0"
       initial={{ opacity: 0, x: -10 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
@@ -1076,7 +1107,7 @@ function ExperienceCard({
       whileHover={{ x: 5 }}
     >
       <motion.div
-        className="absolute top-0 left-0 w-3 h-3 rounded-full bg-black dark:bg-white -translate-x-1.5"
+        className="absolute top-0 left-[-5px] w-3 h-3  rounded-full bg-black dark:bg-white -translate-x-1.5"
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
         viewport={{ once: true }}
@@ -1224,16 +1255,6 @@ function ProjectShowcase({ project, index }: { project: any; index: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px 0px" });
   const [isHovered, setIsHovered] = useState(false);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    const { left, top, width, height } = (
-      e.currentTarget as HTMLElement
-    ).getBoundingClientRect();
-    mouseX.set(e.clientX - left);
-    mouseY.set(e.clientY - top);
-  };
 
   return (
     <motion.div
@@ -1242,23 +1263,25 @@ function ProjectShowcase({ project, index }: { project: any; index: number }) {
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
       transition={{ duration: 0.6 }}
-      onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="grid md:grid-cols-12 gap-8 items-center">
         <div className="md:col-span-7 relative">
-          <div
-            className="aspect-[16/9] relative overflow-hidden rounded-lg border border-neutral-200 dark:border-neutral-700"
-            style={{ perspective: "1000px" }}
-          >
-            <InteractiveMockup
-              mockup={project.mockup}
-              colors={project.colors}
-              isHovered={isHovered}
-              mouseX={mouseX}
-              mouseY={mouseY}
-            />
+          <div className="aspect-[16/9] relative overflow-hidden">
+            <motion.div
+              className="w-full h-full"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.4 }}
+            >
+              <Image
+                src={project.image}
+                alt={project.title}
+                layout="fill"
+                objectFit="contain"
+                className="transition-transform duration-500 ease-out"
+              />
+            </motion.div>
           </div>
         </div>
 
