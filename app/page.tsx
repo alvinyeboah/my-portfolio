@@ -1188,7 +1188,7 @@ function EducationCard({
       whileHover={{ x: 5 }}
     >
       <motion.div
-        className="absolute top-0 left-0 w-3 h-3 rounded-full bg-black dark:bg-white -translate-x-1.5"
+        className="absolute top-0 left-[-6px] w-3 h-3 rounded-full bg-black dark:bg-white -translate-x-1.5"
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
         viewport={{ once: true }}
