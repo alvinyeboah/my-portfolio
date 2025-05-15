@@ -7,6 +7,7 @@ import Link from "next/link";
 import {
   ArrowUpRight,
   ChevronRight,
+  Clock,
   Code,
   ExternalLink,
   GitBranch,
@@ -19,9 +20,11 @@ import {
   Menu,
   Monitor,
   Package,
+  QrCode,
   Smartphone,
   Sparkles,
   Users,
+  Wifi,
   X,
 } from "lucide-react";
 import {
@@ -76,6 +79,32 @@ const projects = [
     colors: ["#f8fafc", "#f1f5f9", "#e2e8f0"],
     image: "/Mockups/threetwentyone.png",
   },
+  {
+    title: "InSync",
+    description: "A real-time collaborative presentation timing tool that uses WebSocket technology to synchronize and manage presentations with precision.",
+    tags: ["Next.js", "Tailwind CSS", "WebSocket", "Real-time", "Socket.io"],
+    url: "https://insync-colab.vercel.app",
+    features: [
+      {
+        icon: <Clock className="w-4 h-4" />,
+        text: "Real-time presentation timing",
+      },
+      {
+        icon: <Users className="w-4 h-4" />,
+        text: "Collaborative room system",
+      },
+      {
+        icon: <QrCode className="w-4 h-4" />,
+        text: "QR code room sharing",
+      },
+      {
+        icon: <Wifi className="w-4 h-4" />,
+        text: "WebSocket-powered real-time updates",
+      }
+    ],
+    colors: ["#ffffff", "#f8fafc", "#e2e8f0"],
+    image: "/Mockups/insync.png"
+  },
   // {
   //   title: "Health & Fitness App",
   //   description: "Personalized workout tracking and nutrition management application with progress analytics.",
@@ -111,7 +140,7 @@ const projects = [
   },
   {
     title: "FlowForge",
-    description: 
+    description:
       "A collaborative multitasking platform for agile team workflows, task management, and project tracking.",
     tags: ["Next.js", "Electron", "Supabase", "Tailwind CSS"],
     url: "https://flowforge-pi.vercel.app/",
@@ -1274,13 +1303,16 @@ function ProjectShowcase({ project, index }: { project: any; index: number }) {
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.4 }}
             >
-              <Image
-                src={project.image}
-                alt={project.title}
-                layout="fill"
-                objectFit="contain"
-                className="transition-transform duration-500 ease-out"
-              />
+              <Link href={project.url}>
+                {" "}
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  layout="fill"
+                  objectFit="contain"
+                  className="transition-transform duration-500 ease-out"
+                />
+              </Link>
             </motion.div>
           </div>
         </div>
