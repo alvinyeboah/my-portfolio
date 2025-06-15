@@ -37,7 +37,7 @@ import {
 } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-provider";
+import { Navigation } from "@/components/navigation";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
@@ -50,12 +50,36 @@ type StatusState = {
 const navItems = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
+  { name: "Projects", href: "/projects" },
+  { name: "Services", href: "/services" },
   { name: "Tech Stack", href: "#stack" },
   { name: "Contact", href: "#contact" },
 ];
 
 const projects = [
+  {
+    title: "Yaarnies Camera Store",
+    description:
+      "A modern e-commerce platform for photography enthusiasts, featuring instant cameras, digital cameras, and content creation accessories with same-day delivery.",
+    tags: ["Next.js", "React.js", "E-commerce", "Tailwind CSS", "TypeScript"],
+    url: "https://www.yaarniescamerastore.com/",
+    features: [
+      {
+        icon: <Monitor className="w-4 h-4" />,
+        text: "Responsive e-commerce platform",
+      },
+      {
+        icon: <Package className="w-4 h-4" />,
+        text: "Real-time inventory management",
+      },
+      {
+        icon: <Layers className="w-4 h-4" />,
+        text: "Secure payment processing",
+      },
+    ],
+    colors: ["#f8fafc", "#f1f5f9", "#e2e8f0"],
+    image: "/Mockups/yaarnies.png",
+  },
   {
     title: "THREETWENTYONE",
     description:
@@ -105,19 +129,6 @@ const projects = [
     colors: ["#ffffff", "#f8fafc", "#e2e8f0"],
     image: "/Mockups/insync.png"
   },
-  // {
-  //   title: "Health & Fitness App",
-  //   description: "Personalized workout tracking and nutrition management application with progress analytics.",
-  //   tags: ["React Native", "Firebase", "Redux", "Node.js"],
-  //   url: "https://example.com/fitness",
-  //   features: [
-  //     { icon: <Monitor className="w-4 h-4" />, text: "Cross-platform mobile experience" },
-  //     { icon: <Package className="w-4 h-4" />, text: "Real-time progress tracking" },
-  //     { icon: <Layers className="w-4 h-4" />, text: "Personalized workout plans" },
-  //   ],
-  //   colors: ["#ecfdf5", "#d1fae5", "#a7f3d0"],
-  //   image: "/public/Mockups/fitness.png",
-  // },
   {
     title: "SkillExchange",
     description:
@@ -246,6 +257,19 @@ const techStack = [
 ];
 
 const experiences = [
+  {
+    period: "May 2025 - Present",
+    title: "UX/UI Designer & Frontend Developer",
+    company: "Mesika Limited",
+    description:
+      "Designed and implemented user interfaces for web and mobile applications using React.js and Node.js, ensuring intuitive and accessible experiences. Conducted user research, usability testing, and gathered feedback to inform and improve design decisions.",
+    highlights: [
+      "Created wireframes, interactive prototypes, and user flows",
+      "Conducted user research and usability testing",
+      "Implemented responsive interfaces with React.js and Node.js",
+      "Wrote comprehensive software documentation with visual design illustrations",
+    ],
+  },
   {
     period: "2023 - Present",
     title: "Front End Developer",
@@ -479,92 +503,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-neutral-900 text-black dark:text-white font-light antialiased selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
-      <header className="fixed top-0 w-full z-50 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-sm border-b border-neutral-100 dark:border-neutral-800">
-        <div className="container px-4 md:px-6 mx-auto">
-          <div className="flex h-16 items-center justify-between">
-            <Link
-              href="#home"
-              className="text-xl font-light tracking-tighter transition-opacity hover:opacity-80"
-            >
-              PORTFOLIO
-            </Link>
-
-            <div className="flex items-center">
-              <nav className="hidden md:flex space-x-8 mr-4">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className={cn(
-                      "text-sm transition-colors hover:text-neutral-500 dark:hover:text-neutral-300",
-                      activeSection === item.href.substring(1)
-                        ? "font-medium"
-                        : "font-light"
-                    )}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </nav>
-
-              <ThemeToggle />
-
-              <Button
-                variant="outline"
-                size="icon"
-                className="md:hidden border-neutral-200 dark:border-neutral-800 ml-2"
-                onClick={() => setMobileMenuOpen(true)}
-              >
-                <Menu className="h-5 w-5" />
-                <span className="sr-only">Open menu</span>
-              </Button>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-white dark:bg-neutral-900"
-          >
-            <div className="container h-full px-4 flex flex-col">
-              <div className="flex h-16 items-center justify-between">
-                <Link
-                  href="#home"
-                  className="text-xl font-light tracking-tighter"
-                >
-                  PORTFOLIO
-                </Link>
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="border-neutral-200 dark:border-neutral-800"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <X className="h-5 w-5" />
-                  <span className="sr-only">Close menu</span>
-                </Button>
-              </div>
-              <div className="flex flex-col justify-center flex-1 space-y-6">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="text-2xl font-light transition-colors hover:text-neutral-500 dark:hover:text-neutral-300"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <Navigation />
 
       <main className="pt-16">
         <Section
@@ -795,9 +734,21 @@ export default function Home() {
             <SectionHeading>Selected Projects</SectionHeading>
 
             <div className="grid gap-24">
-              {projects.map((project, index) => (
-                <ProjectShowcase key={index} project={project} index={index} />
+              {[0, 1, 3, 4].map((projectIndex, displayIndex) => (
+                <ProjectShowcase key={projectIndex} project={projects[projectIndex]} index={displayIndex} />
               ))}
+            </div>
+
+            <div className="text-center mt-16">
+              <Button
+                asChild
+                className="group rounded-full bg-black dark:bg-white text-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-200"
+              >
+                <Link href="/projects">
+                  View All Projects
+                  <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </Link>
+              </Button>
             </div>
           </div>
         </Section>
