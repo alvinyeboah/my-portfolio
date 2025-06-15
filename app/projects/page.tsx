@@ -103,7 +103,7 @@ const projects = [
     timeline: "4 months",
     year: "2025",
     role: "Lead Developer",
-    team: "2 Developers",
+    team: "Solo Project",
     features: [
       {
         icon: <Palette className="w-5 h-5" />,
@@ -265,10 +265,10 @@ const projects = [
     tags: ["Next.js", "Electron", "Supabase", "Tailwind CSS", "WebSocket"],
     url: "https://flowforge-pi.vercel.app/",
     github: "https://github.com/alvinyeboah/flowforge",
-    timeline: "6 months",
+    timeline: "2 months",
     year: "2023",
-    role: "Lead Developer",
-    team: "3 Developers",
+    role: "Full-Stack Developer",
+    team: "2 Developers",
     features: [
       {
         icon: <LayoutGrid className="w-5 h-5" />,
@@ -323,7 +323,7 @@ const projects = [
     timeline: "4 months",
     year: "2025",
     role: "Frontend Lead",
-    team: "4 Developers",
+    team: "2 Developers",
     features: [
       {
         icon: <Sparkles className="w-5 h-5" />,
