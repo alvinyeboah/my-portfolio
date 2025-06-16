@@ -414,17 +414,20 @@ function ServiceShowcase({ service, index }: { service: any; index: number }) {
               </div>
               <div className="flex space-x-3">
                 <Button
-                  asChild
-                  className="rounded-full bg-black dark:bg-white text-white dark:text-black hover:bg-neutral-800 dark:hover:bg-neutral-200"
+                  disabled
+                  className="rounded-full bg-neutral-400 dark:bg-neutral-600 text-white cursor-not-allowed"
                 >
-                  <Link href={service.url} target="_blank" rel="noopener noreferrer">
-                    Get Started
-                    <ExternalLink className="ml-2 h-4 w-4" />
-                  </Link>
+                  Coming Soon
+                  <Clock className="ml-2 h-4 w-4" />
                 </Button>
                 <Button asChild variant="outline" className="rounded-full border-neutral-200 dark:border-neutral-700">
                   <Link href="/#contact">Contact Sales</Link>
                 </Button>
+              </div>
+              <div className="mt-2 text-center">
+                <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                  To be released in about 3 weeks
+                </p>
               </div>
             </div>
           </motion.div>
