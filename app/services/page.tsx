@@ -45,7 +45,7 @@ const services = [
       "Reliable, scalable PostgreSQL database hosting with high availability, automated backups, and enterprise-level security for mission-critical applications.",
     longDescription:
       "Our PostgreSQL hosting service provides enterprise-grade database solutions with 99.9% uptime guarantee. Built on high-performance SSD storage with automated daily backups, point-in-time recovery, and advanced monitoring. Perfect for applications requiring robust data integrity and scalability.",
-    url: "https://db.alvinyeboah.com",
+    url: "https://nexus.alvinyeboah.com",
     icon: <Database className="w-12 h-12" />,
     features: [
       {
@@ -104,7 +104,7 @@ const services = [
       "Powerful SMS API for sending transactional and marketing messages worldwide with industry-leading delivery rates and comprehensive analytics.",
     longDescription:
       "Our SMS service provides global reach with local presence in 200+ countries. Built for developers with RESTful APIs, webhooks, and real-time delivery tracking. Whether you're sending OTP codes, notifications, or marketing campaigns, our platform ensures reliable delivery with detailed analytics.",
-    url: "https://sms.alvinyeboah.com",
+    url: "https://nexus.alvinyeboah.com",
     icon: <MessageSquare className="w-12 h-12" />,
     features: [
       {
@@ -163,7 +163,7 @@ const services = [
       "Professional email hosting and transactional email API for seamless communication, marketing campaigns, and business correspondence.",
     longDescription:
       "Complete email solution combining professional hosting with powerful transactional email APIs. Features advanced spam protection, custom domain support, and detailed analytics. Perfect for businesses needing reliable email infrastructure with developer-friendly APIs for automated communications.",
-    url: "https://mail.alvinyeboah.com",
+    url: "https://nexus.alvinyeboah.com",
     icon: <Mail className="w-12 h-12" />,
     features: [
       {
@@ -222,7 +222,7 @@ const services = [
       "Comprehensive website monitoring and analytics platform that tracks uptime, performance metrics, user behavior, and provides actionable insights to optimize your web presence.",
     longDescription:
       "Advanced monitoring solution that combines uptime tracking, performance monitoring, and detailed analytics. Get real-time alerts for downtime, slow response times, and errors. Track user interactions, conversion funnels, and business metrics with detailed reports and custom dashboards.",
-    url: "https://analytics.alvinyeboah.com",
+    url: "https://nexus.alvinyeboah.com",
     icon: <Eye className="w-12 h-12" />,
     features: [
       {
