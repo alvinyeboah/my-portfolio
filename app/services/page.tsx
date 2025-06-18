@@ -24,6 +24,12 @@ import {
   Smartphone,
   Monitor,
   Cloud,
+  Eye,
+  LineChart,
+  AlertTriangle,
+  Target,
+  Gauge,
+  Timer,
 } from "lucide-react"
 import { motion, useInView } from "framer-motion"
 
@@ -69,7 +75,7 @@ const services = [
       { label: "Storage", value: "Up to 1TB" },
     ],
     pricing: {
-      starting: "$10",
+      starting: "₵100-300",
       period: "month",
       features: ["5GB Storage", "Daily Backups", "SSL Encryption", "24/7 Support"],
     },
@@ -128,7 +134,7 @@ const services = [
       { label: "API Uptime", value: "99.9%" },
     ],
     pricing: {
-      starting: "$0.05",
+      starting: "₵0.30-0.80",
       period: "message",
       features: ["Global Coverage", "Real-time Tracking", "API Access", "Analytics Dashboard"],
     },
@@ -187,7 +193,7 @@ const services = [
       { label: "Support Response", value: "<2hrs" },
     ],
     pricing: {
-      starting: "$5",
+      starting: "₵50-150",
       period: "month",
       features: ["Custom Domain", "10GB Storage", "API Access", "Priority Support"],
     },
@@ -206,6 +212,65 @@ const services = [
       label: "Emails Delivered",
       value: "850K+",
       trend: "99.8% success rate",
+    },
+  },
+  {
+    id: 4,
+    title: "Website Monitoring & Analytics",
+    subtitle: "Real-time Performance Tracking",
+    description:
+      "Comprehensive website monitoring and analytics platform that tracks uptime, performance metrics, user behavior, and provides actionable insights to optimize your web presence.",
+    longDescription:
+      "Advanced monitoring solution that combines uptime tracking, performance monitoring, and detailed analytics. Get real-time alerts for downtime, slow response times, and errors. Track user interactions, conversion funnels, and business metrics with detailed reports and custom dashboards.",
+    url: "https://analytics.alvinyeboah.com",
+    icon: <Eye className="w-12 h-12" />,
+    features: [
+      {
+        icon: <Activity className="w-6 h-6" />,
+        title: "Uptime Monitoring",
+        description: "24/7 monitoring with instant alerts for downtime and performance issues",
+      },
+      {
+        icon: <LineChart className="w-6 h-6" />,
+        title: "Performance Analytics",
+        description: "Detailed insights on page load times, user engagement, and conversion rates",
+      },
+      {
+        icon: <AlertTriangle className="w-6 h-6" />,
+        title: "Smart Alerts",
+        description: "Customizable notifications via SMS, email, and webhooks for critical events",
+      },
+      {
+        icon: <Target className="w-6 h-6" />,
+        title: "Goal Tracking",
+        description: "Monitor conversions, form submissions, and custom business objectives",
+      },
+    ],
+    metrics: [
+      { label: "Check Frequency", value: "30 seconds" },
+      { label: "Data Retention", value: "2 years" },
+      { label: "Response Time", value: "<500ms" },
+    ],
+    pricing: {
+      starting: "₵80-200",
+      period: "month",
+      features: ["5 Websites", "Real-time Alerts", "Custom Reports", "API Access"],
+    },
+    color: {
+      primary: "#f59e0b",
+      secondary: "#fef3c7",
+      gradient: "from-amber-500 to-amber-600",
+    },
+    visualElements: [
+      { icon: <Gauge className="w-8 h-8" />, position: { top: "25%", left: "20%" } },
+      { icon: <LineChart className="w-7 h-7" />, position: { top: "50%", right: "25%" } },
+      { icon: <Timer className="w-6 h-6" />, position: { bottom: "25%", left: "30%" } },
+      { icon: <Target className="w-6 h-6" />, position: { top: "35%", right: "15%" } },
+    ],
+    stats: {
+      label: "Sites Monitored",
+      value: "450+",
+      trend: "99.96% uptime",
     },
   },
 ]
@@ -499,3 +564,4 @@ function ServiceShowcase({ service, index }: { service: any; index: number }) {
     </motion.div>
   )
 }
+ 
