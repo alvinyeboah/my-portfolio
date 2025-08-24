@@ -6,6 +6,7 @@ import {
   ExternalLink,
   ArrowRight,
   Clock,
+  CheckCircle,
 } from "lucide-react"
 import { motion, useInView } from "framer-motion"
 
@@ -15,13 +16,13 @@ import { services } from "@/lib/data/services"
 
 export default function ServicesPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-neutral-900 text-black dark:text-white font-light antialiased">
+    <div className="min-h-screen bg-white dark:bg-neutral-900 text-black dark:text-white font-light antialiased overflow-x-hidden">
       <Navigation />
 
       <main className="pt-16">
         {/* Hero Section */}
         <section className="py-20 md:py-32">
-          <div className="container px-8 md:px-12 mx-auto">
+          <div className="container px-4 md:px-8 lg:px-12 mx-auto max-w-7xl">
             <div className="max-w-4xl mx-auto text-center">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -73,7 +74,7 @@ export default function ServicesPage() {
 
         {/* Services Section */}
         <section id="services" className="py-20 md:py-32">
-          <div className="container px-8 md:px-12 mx-auto">
+          <div className="container px-4 md:px-8 lg:px-12 mx-auto max-w-7xl">
             <div className="space-y-32">
               {services.map((service, index) => (
                 <ServiceShowcase key={service.id} service={service} index={index} />
@@ -84,7 +85,7 @@ export default function ServicesPage() {
 
         {/* CTA Section */}
         <section className="py-20 md:py-32 bg-neutral-50 dark:bg-neutral-800">
-          <div className="container px-8 md:px-12 mx-auto">
+          <div className="container px-4 md:px-8 lg:px-12 mx-auto max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -136,7 +137,7 @@ function ServiceShowcase({ service, index }: { service: any; index: number }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className={`grid lg:grid-cols-12 gap-12 items-center ${isEven ? "" : "lg:grid-flow-col-dense"}`}>
+      <div className={`grid lg:grid-cols-12 gap-8 lg:gap-12 items-center ${isEven ? "" : "lg:grid-flow-col-dense"}`}>
         {/* Content */}
         <div className={`lg:col-span-7 space-y-8 ${isEven ? "" : "lg:col-start-6"}`}>
           <motion.div
@@ -147,11 +148,19 @@ function ServiceShowcase({ service, index }: { service: any; index: number }) {
             {/* Header */}
             <div className="space-y-4 mb-8">
               <div className="flex items-center space-x-4">
-                <div className="p-4 rounded-2xl text-white" style={{ backgroundColor: service.color.primary }}>
+                <div className="p-4 rounded-2xl text-white flex-shrink-0" style={{ backgroundColor: service.color.primary }}>
                   {service.icon}
                 </div>
-                <div className="text-sm text-neutral-500 dark:text-neutral-400">
-                  Service {String(index + 1).padStart(2, "0")}
+                <div className="flex items-center space-x-3">
+                  <div className="text-sm text-neutral-500 dark:text-neutral-400">
+                    Service {String(index + 1).padStart(2, "0")}
+                  </div>
+                  {service.available && (
+                    <div className="flex items-center space-x-1 px-2 py-1 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs rounded-full">
+                      <CheckCircle className="w-3 h-3" />
+                      <span>Available Now</span>
+                    </div>
+                  )}
                 </div>
               </div>
 
@@ -175,8 +184,8 @@ function ServiceShowcase({ service, index }: { service: any; index: number }) {
                     transition={{ duration: 0.4, delay: 0.4 + featureIndex * 0.1 }}
                     className="flex items-start space-x-3 p-4 rounded-lg bg-neutral-50 dark:bg-neutral-800/50 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
                   >
-                    <div className="text-neutral-600 dark:text-neutral-400 mt-1">{feature.icon}</div>
-                    <div>
+                    <div className="text-neutral-600 dark:text-neutral-400 mt-1 flex-shrink-0">{feature.icon}</div>
+                    <div className="min-w-0">
                       <h4 className="font-medium text-sm mb-1">{feature.title}</h4>
                       <p className="text-xs text-neutral-600 dark:text-neutral-400">{feature.description}</p>
                     </div>
@@ -197,7 +206,7 @@ function ServiceShowcase({ service, index }: { service: any; index: number }) {
                     transition={{ duration: 0.4, delay: 0.6 + metricIndex * 0.1 }}
                     className="text-center"
                   >
-                    <div className="text-2xl font-light text-black dark:text-white">{metric.value}</div>
+                    <div className="text-xl md:text-2xl font-light text-black dark:text-white">{metric.value}</div>
                     <div className="text-xs text-neutral-500 dark:text-neutral-400 mt-1">{metric.label}</div>
                   </motion.div>
                 ))}
@@ -205,8 +214,9 @@ function ServiceShowcase({ service, index }: { service: any; index: number }) {
             </div>
 
             {/* Pricing & Actions */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 p-6 bg-neutral-50 dark:bg-neutral-800/50 rounded-xl">
-              <div>
+            <div className="p-6 bg-neutral-50 dark:bg-neutral-800/50 rounded-xl">
+              {/* Main Pricing */}
+              <div className="mb-6">
                 <div className="text-2xl font-light">
                   {service.pricing.starting}
                   <span className="text-sm text-neutral-500 dark:text-neutral-400">/{service.pricing.period}</span>
@@ -215,22 +225,59 @@ function ServiceShowcase({ service, index }: { service: any; index: number }) {
                   {service.pricing.features.slice(0, 2).join(" • ")}
                 </div>
               </div>
-              <div className="flex space-x-3">
-                <Button
-                  disabled
-                  className="rounded-full bg-neutral-400 dark:bg-neutral-600 text-white cursor-not-allowed"
-                >
-                  Coming Soon
-                  <Clock className="ml-2 h-4 w-4" />
-                </Button>
-                <Button asChild variant="outline" className="rounded-full border-neutral-200 dark:border-neutral-700">
-                  <Link href="/#contact">Contact Sales</Link>
-                </Button>
-              </div>
-              <div className="mt-2 text-center">
-                <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                  To be released in about 3 weeks
-                </p>
+
+              {/* Pricing Tiers (for available services) */}
+              {service.available && service.pricing.tiers && (
+                <div className="mb-6">
+                  <h4 className="text-sm font-medium mb-3">Available Plans</h4>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                    {service.pricing.tiers.map((tier: any, tierIndex: number) => (
+                      <div key={tierIndex} className="p-3 bg-white dark:bg-neutral-700 rounded-lg border border-neutral-200 dark:border-neutral-600">
+                        <div className="text-sm font-medium">{tier.name}</div>
+                        <div className="text-lg font-light text-black dark:text-white">{tier.price}/mo</div>
+                        <div className="text-xs text-neutral-600 dark:text-neutral-400 mt-1">
+                          {tier.features.slice(0, 2).join(" • ")}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Action Buttons */}
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div className="flex space-x-3">
+                  {service.available ? (
+                    <Button
+                      asChild
+                      className="rounded-full text-white"
+                      style={{ backgroundColor: service.color.primary }}
+                    >
+                      <Link href="/#contact">
+                        Get Started
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  ) : (
+                    <Button
+                      disabled
+                      className="rounded-full bg-neutral-400 dark:bg-neutral-600 text-white cursor-not-allowed"
+                    >
+                      Coming Soon
+                      <Clock className="ml-2 h-4 w-4" />
+                    </Button>
+                  )}
+                  <Button asChild variant="outline" className="rounded-full border-neutral-200 dark:border-neutral-700">
+                    <Link href="/#contact">Learn More</Link>
+                  </Button>
+                </div>
+                {!service.available && (
+                  <div className="text-center sm:text-right">
+                    <p className="text-sm text-neutral-600 dark:text-neutral-400">
+                      To be released in about 3 weeks
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </motion.div>
@@ -283,6 +330,15 @@ function ServiceShowcase({ service, index }: { service: any; index: number }) {
                   </div>
                 </div>
               </div>
+
+              {/* Available Badge */}
+              {service.available && (
+                <div className="absolute top-4 left-4">
+                  <div className="bg-green-500 text-white px-2 py-1 text-xs rounded-full font-medium">
+                    Available Now
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Floating Price Tag */}
@@ -302,4 +358,3 @@ function ServiceShowcase({ service, index }: { service: any; index: number }) {
     </motion.div>
   )
 }
- 
