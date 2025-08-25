@@ -406,7 +406,7 @@ export default function Home() {
                 <span className="font-normal">Alvin Yeboah</span>
                 <br />
                 <span className="relative">
-                  Creative Developer
+                  Creative Engineer
                   <motion.span
                     className="absolute -bottom-2 left-0 w-full h-0.5 bg-black dark:bg-white"
                     initial={{ width: 0 }}
