@@ -497,7 +497,7 @@ export default function Home() {
                     <h3 className="text-2xl font-light mb-6">Hello there</h3>
                     <div className="space-y-4 text-lg leading-relaxed">
                       <p>
-                        I&#39;m a passionate frontend developer with over 5
+                        I&#39;m a passionate full-stack engineer with over 5
                         years of experience creating elegant and functional web
                         applications. My approach combines clean code
                         architecture with intuitive user interfaces, resulting
