@@ -798,12 +798,18 @@ export default function Home() {
         <div className="container px-4 md:px-6 mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <Link
-                href="#home"
-                className="text-xl font-light tracking-tighter text-white mb-4 block"
-              >
-                PORTFOLIO
-              </Link>
+            <Link
+              href="/"
+              className="transition-opacity hover:opacity-80"
+            >
+              <Image
+                src="/logo.png"
+                alt="Portfolio Logo"
+                width={40}
+                height={40}
+                className="h-10 w-auto"
+              />
+            </Link>
               <p className="text-sm">© 2025 AKY. All rights reserved.</p>
             </div>
 

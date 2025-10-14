@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
@@ -57,10 +58,16 @@ export function Navigation() {
           <div className="flex h-16 items-center justify-between">
             <Link
               href="/"
-              className="text-xl font-light tracking-tighter transition-opacity hover:opacity-80"
+              className="transition-opacity hover:opacity-80"
               onClick={handleLinkClick}
             >
-              PORTFOLIO
+              <Image
+                src="/logo.png"
+                alt="Portfolio Logo"
+                width={40}
+                height={40}
+                className="h-10 w-auto"
+              />
             </Link>
 
             <div className="flex items-center space-x-4">
@@ -169,8 +176,14 @@ export function Navigation() {
               <div className="flex flex-col h-full">
                 {/* Header */}
                 <div className="flex h-16 items-center justify-between px-6 border-b border-neutral-200 dark:border-neutral-700">
-                  <Link href="/" className="text-xl font-light tracking-tighter" onClick={handleLinkClick}>
-                    PORTFOLIO
+                  <Link href="/" className="transition-opacity hover:opacity-80" onClick={handleLinkClick}>
+                    <Image
+                      src="/logo.png"
+                      alt="Portfolio Logo"
+                      width={40}
+                      height={40}
+                      className="h-10 w-auto"
+                    />
                   </Link>
                   <Button
                     variant="ghost"
@@ -255,7 +268,7 @@ export function Navigation() {
 
                   {/* Footer */}
                   <div className="p-6 border-t border-neutral-200 dark:border-neutral-700 mt-auto">
-                    <div className="text-sm text-neutral-500 dark:text-neutral-400 text-center">© 2025 Portfolio</div>
+                    <div className="text-sm text-neutral-500 dark:text-neutral-400 text-center">© 2025 Alvin E=Yeboah</div>
                   </div>
                 </div>
               </div>
