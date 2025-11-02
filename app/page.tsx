@@ -53,6 +53,7 @@ const navItems = [
   { name: "About", href: "#about" },
   { name: "Projects", href: "/projects" },
   { name: "Services", href: "/services" },
+  { name: "Get Started", href: "/website-requirements" },
   { name: "Tech Stack", href: "#stack" },
   { name: "Contact", href: "#contact" },
 ];

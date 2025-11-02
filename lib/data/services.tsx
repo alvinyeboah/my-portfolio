@@ -44,7 +44,7 @@ export const services = [
       "Fast, secure, and fully managed WordPress hosting with one-click installation, automatic updates, and premium themes. Perfect for blogs, business sites, and e-commerce.",
     longDescription:
       "Our WordPress hosting platform is optimized specifically for WordPress sites with lightning-fast SSD storage, automatic daily backups, and one-click staging environments. Includes free SSL certificates, CDN integration, and 24/7 expert support.",
-    url: "https://nexus.alvinyeboah.com",
+    url: "/#contact",
     icon: <FaWordpress className="w-12 h-12" />,
     features: [
       {
@@ -121,7 +121,7 @@ export const services = [
       "Comprehensive website monitoring and analytics platform that tracks uptime, performance metrics, user behavior, and provides actionable insights to optimize your web presence.",
     longDescription:
       "Advanced monitoring solution that combines uptime tracking, performance monitoring, and detailed analytics. Get real-time alerts for downtime, slow response times, and errors. Track user interactions, conversion funnels, and business metrics with detailed reports and custom dashboards.",
-    url: "https://nexus.alvinyeboah.com",
+    url: "/#contact",
     icon: <Eye className="w-12 h-12" />,
     features: [
       {
@@ -198,7 +198,7 @@ export const services = [
       "Reliable, scalable PostgreSQL database hosting with high availability, automated backups, and enterprise-level security for mission-critical applications.",
     longDescription:
       "Our PostgreSQL hosting service provides enterprise-grade database solutions with 99.9% uptime guarantee. Built on high-performance SSD storage with automated daily backups, point-in-time recovery, and advanced monitoring. Perfect for applications requiring robust data integrity and scalability.",
-    url: "https://nexus.alvinyeboah.com",
+    url: "/#contact",
     icon: <Database className="w-12 h-12" />,
     features: [
       {
@@ -248,7 +248,7 @@ export const services = [
       value: "1,200+",
       trend: "+15% this month",
     },
-    available: false,
+    available: true,
   },
   {
     id: 4,
@@ -258,7 +258,7 @@ export const services = [
       "Powerful SMS API for sending transactional and marketing messages worldwide with industry-leading delivery rates and comprehensive analytics.",
     longDescription:
       "Our SMS service provides global reach with local presence in 200+ countries. Built for developers with RESTful APIs, webhooks, and real-time delivery tracking. Whether you're sending OTP codes, notifications, or marketing campaigns, our platform ensures reliable delivery with detailed analytics.",
-    url: "https://nexus.alvinyeboah.com",
+    url: "/#contact",
     icon: <MessageSquare className="w-12 h-12" />,
     features: [
       {
@@ -308,7 +308,7 @@ export const services = [
       value: "2.5M+",
       trend: "This month",
     },
-    available: false,
+    available: true,
   },
   {
     id: 5,
@@ -318,7 +318,7 @@ export const services = [
       "Professional email hosting and transactional email API for seamless communication, marketing campaigns, and business correspondence.",
     longDescription:
       "Complete email solution combining professional hosting with powerful transactional email APIs. Features advanced spam protection, custom domain support, and detailed analytics. Perfect for businesses needing reliable email infrastructure with developer-friendly APIs for automated communications.",
-    url: "https://nexus.alvinyeboah.com",
+    url: "/#contact",
     icon: <Mail className="w-12 h-12" />,
     features: [
       {
@@ -368,6 +368,6 @@ export const services = [
       value: "850K+",
       trend: "99.8% success rate",
     },
-    available: false,
+    available: true,
   },
 ]

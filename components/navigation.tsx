@@ -35,6 +35,10 @@ const navigationItems: NavItem[] = [
     name: "Services",
     href: "/services",
   },
+  {
+    name: "Get Started",
+    href: "/website-requirements",
+  },
 ]
 
 export function Navigation() {
