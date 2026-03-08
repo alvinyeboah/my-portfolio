@@ -66,11 +66,18 @@ export function Navigation() {
               onClick={handleLinkClick}
             >
               <Image
-                src="/logo.png"
+                src="/logo-light.png"
                 alt="Portfolio Logo"
                 width={40}
                 height={40}
-                className="h-10 w-auto"
+                className="h-10 w-auto dark:hidden"
+              />
+              <Image
+                src="/logo-dark.png"
+                alt="Portfolio Logo"
+                width={40}
+                height={40}
+                className="h-10 w-auto hidden dark:block"
               />
             </Link>
 
@@ -182,11 +189,18 @@ export function Navigation() {
                 <div className="flex h-16 items-center justify-between px-6 border-b border-neutral-200 dark:border-neutral-700">
                   <Link href="/" className="transition-opacity hover:opacity-80" onClick={handleLinkClick}>
                     <Image
-                      src="/logo.png"
+                      src="/logo-light.png"
                       alt="Portfolio Logo"
                       width={40}
                       height={40}
-                      className="h-10 w-auto"
+                      className="h-10 w-auto dark:hidden"
+                    />
+                    <Image
+                      src="/logo-dark.png"
+                      alt="Portfolio Logo"
+                      width={40}
+                      height={40}
+                      className="h-10 w-auto hidden dark:block"
                     />
                   </Link>
                   <Button

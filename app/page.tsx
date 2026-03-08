@@ -791,7 +791,7 @@ export default function Home() {
                 className="transition-opacity hover:opacity-80"
               >
                 <Image
-                  src="/logo.png"
+                  src="/logo-dark.png"
                   alt="Portfolio Logo"
                   width={40}
                   height={40}
